@@ -16,8 +16,19 @@ namespace homework
 
         protected void btn_send_Click(object sender, EventArgs e)
         {
-            txt_two.Text = txt_one.Text;
+            ViewState["name"] = txt_one.Text;
+            txt_two.Text = ViewState["name"].ToString();
             txt_one.Text = null;
+            Session["Sone"]=ViewState["name"];
+            Application["appone"] = ViewState["name"];
+            HttpCookie cookie = new HttpCookie("cook");
+            cookie["name"] = ViewState["name"].ToString();
+            Response.Cookies.Add(cookie);
+        }
+
+        protected void btn_response_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("page 2.aspx?name=" + ViewState["name"].ToString());
         }
     }
 }

@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:CheckBox ID="chb_one" runat="server" Text="one" TextAlign="Left" /><asp:Button ID="btn_check" runat="server" Text="check" OnClick="btn_check_Click" />
+            <asp:HiddenField ID="HiddenField1" runat="server" />
         </div>
     </form>
 </body>

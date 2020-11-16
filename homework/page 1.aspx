@@ -12,6 +12,7 @@
             <asp:TextBox ID="txt_one" runat="server"></asp:TextBox><asp:TextBox ID="txt_two" runat="server"></asp:TextBox>
             <br /><asp:Button ID="btn_send" runat="server"  Text="change" OnClick="btn_send_Click" />
         </div>
+        <asp:Button ID="btn_response" runat="server" OnClick="btn_response_Click" Text="response" />
     </form>
 </body>
 </html>

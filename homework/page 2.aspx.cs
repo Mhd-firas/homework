@@ -11,14 +11,13 @@ namespace homework
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btn_check_Click(object sender, EventArgs e)
-        {
-            if (chb_one.Checked != true)
-                chb_one.Checked = true;
-            else chb_one.Checked = false;
+            Response.Write("Application test = "+Application["appone"]+"<br>");
+            Response.Write("session test = " + Session["Sone"] + "<br>");
+            HttpCookie cookie = Request.Cookies["cook"];
+            HiddenField1.Value = cookie["name"];
+            Response.Write("Cookie and hidden field test = "+HiddenField1.Value + "<br>");
+            string test = Request.QueryString.Get("name");
+            Response.Write("querystring test = " + test + "<br>");
         }
     }
 }
